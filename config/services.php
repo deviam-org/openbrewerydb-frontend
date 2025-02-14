@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'backend' => [
+        'user_agent' => env('BACKEND_USER_AGENT'),
+        'base_url' => env('BACKEND_BASE_URL'),
+        'api_key' => env('BACKEND_API_KEY'),
+    ],
+
 ];
