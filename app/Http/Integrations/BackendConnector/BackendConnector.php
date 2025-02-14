@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Integrations\BackendConnector;
 
 use App\Data\Auth\Response\ApiResponseDtoData;
-use Saloon\Helpers\OAuth2\OAuthConfig;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Saloon\Traits\Plugins\AcceptsJson;

@@ -34,8 +34,8 @@ class Table extends Component
         public string $defaultSortOrder = 'desc',
     ) {
 
-        $this->tableFilters = $name . '.filters';
-        
+        $this->tableFilters = $name.'.filters';
+
         $this->tableColumns = json_encode($columns);
 
         // Session keys

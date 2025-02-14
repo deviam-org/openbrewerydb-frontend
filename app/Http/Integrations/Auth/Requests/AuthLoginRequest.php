@@ -24,7 +24,8 @@ final class AuthLoginRequest extends Request implements HasBody
     public function __construct(
         protected string $email,
         protected string $password,
-    ) {}
+    ) {
+    }
 
     protected function defaultBody(): array
     {

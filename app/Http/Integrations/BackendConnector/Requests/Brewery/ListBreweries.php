@@ -24,7 +24,8 @@ final class ListBreweries extends Request implements HasBody
         protected int $perPage = 10,
         protected ?string $sort = null,
         protected ?string $sortDirection = null
-    ) {}
+    ) {
+    }
 
     /**
      * The default body for the request

@@ -15,5 +15,6 @@ final class ApiResponseDtoData extends Data
         public readonly ?array $meta,
         public readonly ?string $error,
         public readonly ?array $errors,
-    ) {}
+    ) {
+    }
 }

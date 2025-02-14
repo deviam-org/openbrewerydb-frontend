@@ -12,16 +12,18 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Facades\Session;
 use Saloon\Http\Auth\TokenAuthenticator;
+use SensitiveParameter;
 
 class ApiUserProvider implements UserProvider
 {
     public function __construct(
         protected readonly AuthConnector $authConnector
-    ) {}
+    ) {
+    }
 
     public function retrieveByCredentials(array $credentials): ?Authenticatable
     {
-        if (! array_key_exists('email', $credentials) || ! array_key_exists('password', $credentials)) {
+        if ( ! array_key_exists('email', $credentials) || ! array_key_exists('password', $credentials)) {
             return null;
         }
 
@@ -67,13 +69,17 @@ class ApiUserProvider implements UserProvider
         return null;
     }
 
-    public function retrieveByToken($identifier, $token): void {}
+    public function retrieveByToken($identifier, $token): void
+    {
+    }
 
-    public function updateRememberToken(Authenticatable $user, $token): void {}
+    public function updateRememberToken(Authenticatable $user, $token): void
+    {
+    }
 
     private function getAuthUser($token): array
     {
-        $clientRequest = new AuthProfileRequest;
+        $clientRequest = new AuthProfileRequest();
         $this->authConnector->authenticate(new TokenAuthenticator($token));
         $response = $this->authConnector->send($clientRequest);
 
@@ -92,5 +98,7 @@ class ApiUserProvider implements UserProvider
         return [];
     }
 
-    public function rehashPasswordIfRequired(Authenticatable $user, #[\SensitiveParameter] array $credentials, bool $force = false): void {}
+    public function rehashPasswordIfRequired(Authenticatable $user, #[SensitiveParameter] array $credentials, bool $force = false): void
+    {
+    }
 }

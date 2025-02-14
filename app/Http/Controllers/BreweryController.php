@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,8 +14,9 @@ use App\Http\Integrations\BackendConnector\Requests\Brewery\ListBreweries;
 
 class BreweryController extends Controller
 {
-
-    public function __construct(protected BackendConnector $backendConnector) {}
+    public function __construct(protected BackendConnector $backendConnector)
+    {
+    }
 
     public function index()
     {

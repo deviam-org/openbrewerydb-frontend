@@ -15,6 +15,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Auth::provider('external_api', fn ($app, array $config) => new ApiUserProvider(new AuthConnector));
+        Auth::provider('external_api', fn ($app, array $config) => new ApiUserProvider(new AuthConnector()));
     }
 }

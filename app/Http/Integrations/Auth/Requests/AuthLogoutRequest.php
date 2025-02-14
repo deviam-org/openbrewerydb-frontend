@@ -20,7 +20,7 @@ final class AuthLogoutRequest extends Request
             'Content-Type' => 'application/json',
             'X-Api-Key' => config('services.backend.api_key'),
             'User-Agent' => config('services.backend.user-agent'),
-            'Authorization' => 'Bearer ' . session('access_token'),
+            'Authorization' => 'Bearer '.session('access_token'),
         ];
     }
 

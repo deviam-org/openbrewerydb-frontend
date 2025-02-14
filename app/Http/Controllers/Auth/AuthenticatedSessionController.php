@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Auth;
 
-use Exception;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,8 +15,9 @@ use App\Http\Integrations\Auth\Requests\AuthLogoutRequest;
 
 class AuthenticatedSessionController extends Controller
 {
-
-    public function __construct(protected AuthConnector $authConnector) {}
+    public function __construct(protected AuthConnector $authConnector)
+    {
+    }
 
     /**
      * Display the login view.
